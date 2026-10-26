@@ -31,7 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('clientes', \App\Http\Controllers\ClienteController::class);
+    Route::resource('clientes', \App\Http\Controllers\ClienteController::class)
+    ->middleware('admin.omega');
     Route::resource('mascotas', \App\Http\Controllers\MascotaController::class);
     Route::resource('veterinarios', \App\Http\Controllers\VeterinarioController::class);
     Route::resource('citas', \App\Http\Controllers\CitaController::class)->except(['edit', 'update', 'show']);

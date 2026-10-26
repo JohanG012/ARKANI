@@ -6,19 +6,16 @@ use App\Models\Cliente;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
+/**
+ * Controlador del módulo de Clientes.
+ * Gestiona el CRUD de los dueños de mascotas. Un cliente se compone de
+ * dos registros: una cuenta de acceso "users" y un perfil con sus
+ * datos de contacto "clientes". Solo pueden usarlo los usuarios
+ * con rol administrador u omega.
+ */
 class ClienteController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(function ($request, $next) {
-            if (!auth()->user()->isAdmin() && !auth()->user()->isOmega()) {
-                abort(403, 'No tienes permiso para acceder a esta sección.');
-            }
-            return $next($request);
-        });
-    }
-
+  
     public function index()
     {
         $clientes = Cliente::with('user')->latest()->paginate(10);

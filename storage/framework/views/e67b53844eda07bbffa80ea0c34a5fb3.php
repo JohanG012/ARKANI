@@ -57,25 +57,155 @@
                 </div>
 
             <?php elseif(auth()->user()->isAdmin()): ?>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Citas hoy</p>
-                        <p class="text-3xl font-bold text-teal-600 dark:text-teal-400">0</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Clientes registrados</p>
-                        <p class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">0</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Veterinarios activos</p>
-                        <p class="text-3xl font-bold text-purple-600 dark:text-purple-400">0</p>
-                    </div>
-                </div>
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
-                    <p class="text-gray-700 dark:text-gray-300">
-                        Bienvenido, <strong><?php echo e(auth()->user()->name); ?></strong>. Desde aquí gestionas veterinarios, clientes y citas de tu clínica.
-                    </p>
-                </div>
+            
+            
+
+    <div class="mb-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+        <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+            Bienvenido, <?php echo e(auth()->user()->name); ?>
+
+        </h3>
+        <p class="mt-1 text-gray-600 dark:text-gray-300">
+            Selecciona un módulo para gestionar tu clínica veterinaria.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <a href="<?php echo e(route('veterinarios.create')); ?>"
+           class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-lg transition">
+            <div class="text-4xl mb-3"><?php if (isset($component)) { $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c = $attributes; } ?>
+<?php $component = BladeUI\Icons\Components\Svg::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('phosphor-stethoscope'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\BladeUI\Icons\Components\Svg::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['class' => 'w-7 h-7 text-teal-600 dark:text-teal-400']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $attributes = $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $component = $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?></div>
+            <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                Veterinarios
+            </h3>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                Registrar un nuevo veterinario.
+            </p>
+            <span class="inline-block mt-4 text-teal-600 dark:text-teal-400 font-semibold">
+                Abrir formulario →
+            </span>
+        </a>
+
+        <a href="<?php echo e(route('citas.create')); ?>"
+           class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-lg transition">
+            <div class="text-4xl mb-3"><?php if (isset($component)) { $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c = $attributes; } ?>
+<?php $component = BladeUI\Icons\Components\Svg::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('phosphor-calendar-check'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\BladeUI\Icons\Components\Svg::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['class' => 'w-7 h-7 text-indigo-600 dark:text-indigo-400']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $attributes = $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $component = $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?></div>
+            <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                Citas
+            </h3>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                Programar una cita veterinaria.
+            </p>
+            <span class="inline-block mt-4 text-teal-600 dark:text-teal-400 font-semibold">
+                Crear cita →
+            </span>
+        </a>
+
+        <a href="<?php echo e(route('clientes.create')); ?>"
+           class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-lg transition">
+            <div class="text-4xl mb-3"><?php if (isset($component)) { $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c = $attributes; } ?>
+<?php $component = BladeUI\Icons\Components\Svg::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('phosphor-users'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\BladeUI\Icons\Components\Svg::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['class' => 'w-7 h-7 text-blue-600 dark:text-blue-400']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $attributes = $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $component = $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?></div>
+            <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                Clientes
+            </h3>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                Registrar los propietarios de mascotas.
+            </p>
+            <span class="inline-block mt-4 text-teal-600 dark:text-teal-400 font-semibold">
+                Registrar cliente →
+            </span>
+        </a>
+
+        <a href="<?php echo e(route('mascotas.create')); ?>"
+           class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 hover:shadow-lg transition">
+            <div class="text-4xl mb-3"><?php if (isset($component)) { $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c = $attributes; } ?>
+<?php $component = BladeUI\Icons\Components\Svg::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('phosphor-paw-print'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\BladeUI\Icons\Components\Svg::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['class' => 'w-7 h-7 text-green-600 dark:text-green-400']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $attributes = $__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__attributesOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c)): ?>
+<?php $component = $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
+<?php unset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
+<?php endif; ?></div>
+            <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+                Mascotas
+            </h3>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                Registrar una mascota.
+            </p>
+            <span class="inline-block mt-4 text-teal-600 dark:text-teal-400 font-semibold">
+                Registrar mascota →
+            </span>
+        </a>
+
+    </div>
+
 
             <?php elseif(auth()->user()->isVeterinario()): ?>
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6">

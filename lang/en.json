@@ -16,5 +16,6 @@
     "Nombre completo": "Full name",
     "Confirmar contraseña": "Confirm password",
     "¿Ya tienes cuenta?": "Already have an account?",
-    "Inicia sesión": "Log in"
+    "Inicia sesión": "Log in",
+   "The credentials do not match our records.": "The credentials do not match our records."
 }

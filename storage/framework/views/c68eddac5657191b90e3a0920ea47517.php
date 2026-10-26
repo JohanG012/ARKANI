@@ -91,7 +91,7 @@
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['href' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(route('profile.edit'))]); ?>
-                            <?php echo e(__('Profile')); ?>
+                            <?php echo e(__('Perfil')); ?>
 
                          <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -120,7 +120,7 @@
 <?php endif; ?>
 <?php $component->withAttributes(['href' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(route('logout')),'onclick' => 'event.preventDefault();
                                                 this.closest(\'form\').submit();']); ?>
-                                <?php echo e(__('Log Out')); ?>
+                                <?php echo e(__('Cerrar sesión')); ?>
 
                              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

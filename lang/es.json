@@ -1,3 +1,4 @@
+
 {
     "El sistema que cuida cada detalle de tu clínica": "El sistema que cuida cada detalle de tu clínica",
     "Gestiona citas, historiales y clientes en un solo lugar, sin complicaciones.": "Gestiona citas, historiales y clientes en un solo lugar, sin complicaciones.",
@@ -10,5 +11,6 @@
     "¿No tienes cuenta?": "¿No tienes cuenta?",
     "Regístrate": "Regístrate",
     "¿Eres una veterinaria?": "¿Eres una veterinaria?",
-    "Regístrala aquí": "Regístrala aquí"
+    "Regístrala aquí": "Regístrala aquí",
+    "The credentials do not match our records.": "El correo electrónico o la contraseña son incorrectos."
 }

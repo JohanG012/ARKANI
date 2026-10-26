@@ -23,9 +23,10 @@
                             <select name="mascota_id" class="mt-1 block w-full rounded-lg border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-white">
                                 <option value="">Selecciona una mascota</option>
                                 @foreach($mascotas as $mascota)
-                                    <option value="{{ $mascota->id }}" {{ old('mascota_id') == $mascota->id ? 'selected' : '' }}>
-                                        {{ $mascota->nombre }} @if(!auth()->user()->isCliente()) — {{ $mascota->cliente->user->name }} @endif
-                                    </option>
+                               <option value="{{ $mascota->id }}" {{ old('mascota_id') == $mascota->id ? 'selected' : '' }}>
+                              {{ $mascota->nombre }}
+                                @if(!auth()->user()->isCliente() && $mascota->cliente && $mascota->cliente->user) — {{ $mascota->cliente->user->name }}
+                                @endif
                                 @endforeach
                             </select>
                             @error('mascota_id') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
@@ -35,6 +36,7 @@
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Veterinario</label>
                             <select name="veterinario_id" class="mt-1 block w-full rounded-lg border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:text-white">
                                 <option value="">Selecciona un veterinario</option>
+                            
                                 @foreach($veterinarios as $veterinario)
                                     <option value="{{ $veterinario->id }}" {{ old('veterinario_id') == $veterinario->id ? 'selected' : '' }}>
                                         {{ $veterinario->user->name }} @if($veterinario->especialidad) — {{ $veterinario->especialidad }} @endif

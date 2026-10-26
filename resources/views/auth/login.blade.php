@@ -15,7 +15,8 @@
         <div>
             <x-input-label for="email" :value="__('Correo electrónico')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+           <x-input-error :messages="collect($errors->get('email'))->map(fn ($message) => $message === 'auth.failed' ? 'El correo electrónico o la contraseña son incorrectos.' : $message)->all()" class="mt-2"
+/>
         </div>
 
         <div>
